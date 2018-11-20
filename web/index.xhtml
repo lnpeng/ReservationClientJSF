@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Airline Reservations</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h3>Please select the seat type and class to reserve:</h3>
+            <h:selectOneMenu value="#{reservationBean.seatType}">
+                <f:selectItem itemValue="Aisle" itemLabel="Aisle" />
+                <f:selectItem itemValue="Middle" itemLabel="Middle" />
+                <f:selectItem itemValue="Window" itemLabel="Window" />
+            </h:selectOneMenu>
+            <h:selectOneMenu value="#{reservationBean.classType}">
+                <f:selectItem itemValue="Economy" itemLabel="Economy" />
+                <f:selectItem itemValue="First" itemLabel="First" />
+            </h:selectOneMenu>
+            <h:commandButton value="Reserve"
+                             action="#{reservationBean.reserveSeat}"/>
+        </h:form>
+        <h3>#{reservationBean.result}</h3>
+    </h:body>
+</html>
